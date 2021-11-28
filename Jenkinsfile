@@ -12,6 +12,12 @@ pipeline {
                 echo 'goodbye'
             }
         }
+
+        stage('docker build'){
+            steps{
+                sh(script: 'pwd')
+            }
+        }
        
 
 	stage('docker run'){
