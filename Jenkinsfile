@@ -18,8 +18,8 @@ pipeline {
                 sh(script: """
                 pwd
                 ls -l 
-                docker rm -f $(docker ps -aq)
-                docker rmi -f $(docker images -aq)
+                docker rm -f `docker ps -aq`
+                docker rmi -f `docker images -aq`
                 docker ps
                 docker images
                 """)
