@@ -2,17 +2,17 @@ pipeline{
 	agent any
 	stages {
 		stage('Verify branch'}{
-			steps{
+			steps {
 			echo "$GIT_BRANCH"
 			}
-	}
+			}
 		stage('docker build'){
-		steps{
+		steps {
 		sh(script: 'docker build -t sravan-nginx:v1 .')
 		}
 		}
 		stage('docker run') {
-		steps{
+		steps {
 		sh(script: 'docker run -itd --name=sravan-new -p 8082:80 sravan-nginx:v1')
 		}
 		}
