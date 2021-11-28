@@ -18,10 +18,7 @@ pipeline {
                 sh(script: """
                 pwd
                 ls -l 
-                docker rm -f `docker ps -aq`
-                docker rmi -f `docker images -aq`
-                docker ps
-                docker images
+                docker build -t sravan-nginx:v1 .
                 """)
                 
             }
