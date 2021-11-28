@@ -32,6 +32,7 @@ pipeline {
              script {
              docker.image('sravan-nginx:v1').withRun('-p 8083:80')
              docker ps -a
+             
              //""")
              }
             }
