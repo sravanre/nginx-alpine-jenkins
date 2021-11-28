@@ -12,14 +12,7 @@ pipeline {
                 echo 'goodbye'
             }
         }
-        stage('check for older docker file ') {
-            steps {
-                sh(script: """
-                docker ps -a | grep sravan-nginx
-               
-                """)
-            }
-        }
+       
 
 	stage('docker run'){
 	    steps {
