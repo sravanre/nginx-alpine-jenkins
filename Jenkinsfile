@@ -16,8 +16,7 @@ pipeline {
             steps {
                 sh(script: """
                 docker ps -a | grep sravan-nginx
-                docker stop `docker ps -a | grep sravan-nginx | awk '{print $1}'`
-                docker rm `docker ps -a | grep sravan-nginx | awk '{print $1}'`
+               
                 """)
             }
         }
