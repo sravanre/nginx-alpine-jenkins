@@ -27,11 +27,13 @@ pipeline {
 
 	stage('docker run'){
 	    steps {
-	        sh(script: """
-             docker run -itd --name=sravan-new -p 8082:80 sravan-nginx:v1
+	        // sh(script: """
+             // docker run -itd --name=sravan-new -p 8082:80 sravan-nginx:v1
+             script {
+             docker.image('sravan-nginx:v1').withRun('-p 8083:80')
              docker ps -a
-             """)
-
+             //""")
+             }
             }
      }
      
