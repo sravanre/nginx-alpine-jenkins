@@ -15,8 +15,11 @@ pipeline {
 
         stage('docker build'){
             steps{
-                sh(script: 'pwd')
-                sh(script: 'ls -l')
+                sh(script: """
+                pwd
+                ls -l 
+                """)
+                
             }
         }
        
